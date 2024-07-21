@@ -1,0 +1,23 @@
+import { FieldSchema, StructureSchema } from '@ephox/boulder';
+import { Optional, Result } from '@ephox/katamari';
+
+export interface SeparatorMenuItemSpec {
+  type?: 'separator';
+  text?: string;
+}
+
+// tslint:disable-next-line:no-empty-interface
+export interface SeparatorMenuItemInstanceApi { }
+
+export interface SeparatorMenuItem {
+  type: 'separator';
+  text: Optional<string>;
+}
+
+export const separatorMenuItemSchema = StructureSchema.objOf([
+  FieldSchema.requiredString('type'),
+  FieldSchema.optionString('text')
+]);
+
+export const createSeparatorMenuItem = (spec: SeparatorMenuItemSpec): Result<SeparatorMenuItem, StructureSchema.SchemaError<any>> =>
+  StructureSchema.asRaw('separatormenuitem', separatorMenuItemSchema, spec);

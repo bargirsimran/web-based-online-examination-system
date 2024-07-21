@@ -1,0 +1,40 @@
+{
+  "name": "@ephox/mcagar",
+  "version": "7.0.4",
+  "description": "Tinymce agar wrapper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tinymce/tinymce.git",
+    "directory": "modules/mcagar"
+  },
+  "files": [
+    "lib/main",
+    "src/main",
+    "README.md",
+    "LEGAL.txt",
+    "CHANGELOG.txt",
+    "LICENSE.txt"
+  ],
+  "scripts": {
+    "test": "bedrock-auto -b phantomjs -d src/test/ts",
+    "test-manual": "bedrock -d src/test/ts",
+    "lint": "eslint --config ../../.eslintrc.json src/**/*.ts",
+    "prepublishOnly": "tsc -b"
+  },
+  "author": "Tiny Technologies, Inc",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@ephox/agar": "^6.0.3",
+    "@ephox/katamari": "^8.1.1",
+    "@ephox/sand": "^5.0.3",
+    "@ephox/sugar": "^8.1.1",
+    "@ephox/wrap-jsverify": "^2.0.1",
+    "tslib": "^2.0.0"
+  },
+  "peerDependencies": {
+    "tinymce": ">=4.0.0"
+  },
+  "main": "./lib/main/ts/ephox/mcagar/api/Main.js",
+  "module": "./lib/main/ts/ephox/mcagar/api/Main.js",
+  "types": "./lib/main/ts/ephox/mcagar/api/Main.d.ts"
+}

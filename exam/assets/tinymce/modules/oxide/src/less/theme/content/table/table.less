@@ -1,0 +1,30 @@
+//
+// Copyright (c) Tiny Technologies, Inc. All rights reserved.
+// Licensed under the LGPL or a commercial license.
+// For LGPL see License.txt in the project root for license information.
+// For commercial licenses see https://www.tiny.cloud/
+//
+
+//
+// Tables
+//
+
+@empty-table-border: 1px dashed #bbb;
+
+// Show a dashed border inside TinyMCE if the table
+// lacks any border attributes or styles or have them
+// be set to zero
+table[style*="border-width: 0px"],
+.mce-item-table:not([border]),
+.mce-item-table[border="0"],
+table[style*="border-width: 0px"] td,
+.mce-item-table:not([border]) td,
+.mce-item-table[border="0"] td,
+table[style*="border-width: 0px"] th,
+.mce-item-table:not([border]) th,
+.mce-item-table[border="0"] th,
+table[style*="border-width: 0px"] caption,
+.mce-item-table:not([border]) caption,
+.mce-item-table[border="0"] caption {
+  border: @empty-table-border;
+}
